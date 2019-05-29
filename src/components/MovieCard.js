@@ -26,7 +26,6 @@ class MovieCard extends React.Component {
     return true
   }
 
-
   componentDidMount () {
     //console.log(this.state)
   }
@@ -40,22 +39,10 @@ class MovieCard extends React.Component {
   }
   
   render() {
-    const { id, title, year, image, overview, deleteMovie } = this.props
     return <div className='movie-container'>   
-        <div className='favourite-container'>
-            <button onClick={this.handleCheck} className='favourite-button'>
-                <span className={`fa fa-star favourite-star ${this.state.checked ? 'checked': ''}`}></span>
-            </button>
-            <button onClick={() => deleteMovie(id)} className='close-button'>
-              <i className="fa fa-close"></i>
-            </button>
-        </div>
-      <h1>{title}</h1>
-      <div>{year}</div>
-      <div className='overview-container'>
-        <img className='overview-img' src={image} alt='Movie' />
-        <p>{overview}</p>
-      </div>
+      <h1>{this.props.original_title}</h1>
+      <div>{this.props.original_language}</div>
+      <div>{this.props.overview}</div>
     </div>
     }
 }

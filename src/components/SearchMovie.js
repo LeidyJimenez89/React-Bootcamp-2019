@@ -17,6 +17,7 @@ class SearchMovie extends React.Component {
 		const value = e.target.value;
 		this.setState({ [name]: value });
 	}
+	
 	handleChange = (e) => {
 		let props = this.props;
 		e.preventDefault();

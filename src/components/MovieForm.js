@@ -1,4 +1,5 @@
 import React from 'react';
+import MainLayout from '../layouts/MainLayout'
 
 class MovieForm extends React.Component {
 
@@ -39,15 +40,17 @@ class MovieForm extends React.Component {
 	}
 
 	render(){
-		return <form className="form" onSubmit ={this.handleSubmit}>
-			<input id='movieID' value={this.state.id} name='id' placeholder='id' onChange={this.handleChange}/>
-			<input value={this.state.title} name='title' placeholder='title' onChange={this.handleChange}/>
-			<input ref={this.yearRef} value={this.state.year} name='year' placeholder='year' onChange={this.handleChange}/>
-			<input value={this.state.image} name='image' placeholder='image' onChange={this.handleChange}/>
-			<input value={this.state.genre} name='genre' placeholder='genre' onChange={this.handleChange}/>
-			<input value={this.state.overview} name='overview' placeholder='overview' onChange={this.handleChange}/>
-			<input type='submit' value="Save" />
-		</form>	
+		return <MainLayout>
+			<form className="form" onSubmit ={this.handleSubmit}>
+				<input id='movieID' value={this.state.id} name='id' placeholder='id' onChange={this.handleChange}/>
+				<input value={this.state.title} name='title' placeholder='title' onChange={this.handleChange}/>
+				<input ref={this.yearRef} value={this.state.year} name='year' placeholder='year' onChange={this.handleChange}/>
+				<input value={this.state.image} name='image' placeholder='image' onChange={this.handleChange}/>
+				<input value={this.state.genre} name='genre' placeholder='genre' onChange={this.handleChange}/>
+				<input value={this.state.overview} name='overview' placeholder='overview' onChange={this.handleChange}/>
+				<input type='submit' value="Save" />
+			</form>
+		</MainLayout>
 	} 
 }
 

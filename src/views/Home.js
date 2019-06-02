@@ -1,10 +1,12 @@
 import React from 'react';
 
 //import moviesData from '../data/movies.json'
+import {Redirect} from 'react-router-dom'
 
 import MovieCard from '../components/MovieCard'
-import MovieForm from '../components/MovieForm'
 import SearchMovie from '../components/SearchMovie'
+
+import MainLayout from '../layouts/MainLayout'
 
 class Home extends React.Component {
 
@@ -24,6 +26,15 @@ class Home extends React.Component {
     this.setState({movies})
   }
 
+  /*deleteMovie = (movieId) => {
+    this.setState((state, props) => {
+      const movies = state.movies.filter((movie) => movie.id !== movieId)
+      return  {
+        movies
+      }
+    })
+  }*/
+
   componentDidMount () {
     fetch('https://api.themoviedb.org/3/movie/popular?api_key=3463c35b79f204a177932e675579e8f9&language=en-US&page=1')
     .then((res) => res.json())
@@ -34,33 +45,11 @@ class Home extends React.Component {
     })
   }
 
-  /*deleteMovie = (movieId) => {
-    this.setState((state, props) => {
-      const movies = state.movies.filter((movie) => movie.id !== movieId)
-      return  {
-        movies
-      }
-    })
-  }*/
-
   render() {
-    return <div>
-
-      <h1 className='main-title'>Movie App</h1>
-
-      {/* Componente SearchMovie */}
-      <SearchMovie changeMovies = {this.addMovie}/>
-      
-      {/* Componente MovieForm */}
-      <MovieForm onSubmit = {this.addMovie}/>
-      
-      {/* Componente MovieCard */}
-      <div className='content'>
+    return <MainLayout>
+        {/*<Redirect to='/add' />*/}
         {this.state.results.map((movie) => <MovieCard deleteMovie={this.deleteMovie} key={movie.id} {...movie} />)}
-        {/*{this.state.movies.map((movie) => <MovieCard deleteMovie={this.deleteMovie} key={movie.id} {...movie} />)}*/}
-      </div>
-    
-    </div>
+    </MainLayout>
   }
 }
 

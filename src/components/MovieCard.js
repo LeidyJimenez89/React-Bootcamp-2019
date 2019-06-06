@@ -1,54 +1,59 @@
-import React from 'react';
+import React from "react";
 
 class MovieCard extends React.Component {
   state = {
-    checked: false,
-  }
+    checked: false
+  };
 
   handleCheck = () => {
-    this.setState((state, props) => ({
-      checked: !state.checked
-    }), () => console.log('favourite added'))
-  }
+    this.setState(
+      (state, props) => ({
+        checked: !state.checked
+      }),
+      () => console.log("favourite added")
+    );
+  };
 
   static getDerivedStateFromProps(props, state) {
-    console.log('get state from props')
-    if(props.genre === "horror") {
+    console.log("get state from props");
+    if (props.genre === "horror") {
       return {
-        checked: true,
-      }
+        checked: true
+      };
     }
-    return null
+    return null;
   }
 
-  shouldComponentUpdate () {
+  shouldComponentUpdate() {
     //Remember to return true or false
-    return true
+    return true;
   }
 
-  componentDidMount () {
+  componentDidMount() {
     //console.log(this.state)
   }
 
-  componentDidUpdate (prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     //console.log(this.state)
   }
 
   componentWillUnmount() {
-    console.log('I will unmount')
+    console.log("I will unmount");
   }
-  
+
   render() {
-    return <div className='movie-container'>   
-      <h1>{this.props.original_title}</h1>
-      <div>{this.props.original_language}</div>
-      <div>{this.props.overview}</div>
-    </div>
-    }
+    return (
+      <div className="movie-container">
+        <h1>{this.props.original_title}</h1>
+        <div>{this.props.original_language}</div>
+        <div>{this.props.overview}</div>
+      </div>
+    );
+  }
 }
 
 MovieCard.defaultProps = {
-  genre: 'comedia',
-}
+  genre: "comedia"
+};
 
-export default MovieCard
+export default MovieCard;

@@ -1,6 +1,6 @@
-import { bindActionsCreators } from "redux";
+import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { requestMovies } from "./actions/movies";
+import { requestMovies } from "../actions/movies";
 import Home from "../views/Home";
 
 const mapStateToProps = state => ({
@@ -8,12 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch =>
-	bindActionsCreators(
-		{
-			requestMovies
-		},
-		dispatch
-	);
+	bindActionCreators({ requestMovies }, dispatch);
 
 export default connect(
 	mapStateToProps,

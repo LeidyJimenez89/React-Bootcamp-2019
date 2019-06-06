@@ -16,7 +16,8 @@ function authUser() {
 	return { isAuth: true };
 }
 
-const store = configureStore;
+const initialState = {};
+const store = configureStore(initialState);
 
 function App() {
 	const userAuth = authUser();

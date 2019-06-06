@@ -4,7 +4,7 @@ import movies from "../data/movies";
 export default (state, action) => {
 	switch (action.type) {
 		case REQUEST_MOVIES:
-			return { ...state, movies.movies };
+			return { ...state, movies };
 		default:
 			return state;
 	}

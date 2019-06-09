@@ -50,6 +50,8 @@ class Home extends React.Component {
           results: data.results
         });
       });
+
+    this.props.requestUsers();
   }
 
   render() {

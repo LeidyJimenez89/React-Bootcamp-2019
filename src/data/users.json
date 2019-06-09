@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "id": 2001,
+            "firstname": "Leonardo",
+            "lastname": "Perez",
+            "email": "leoperez@leoperez.com",
+            "password": "cualquiera",
+            "genre": "M"
+        },
+        {
+            "id": 2002,
+            "firstname": "Leonardo2",
+            "lastname": "Perez",
+            "email": "leoperez2@leoperez.com",
+            "password": "cualquiera2",
+            "genre": "M"
+        },
+        {
+            "id": 2003,
+            "firstname": "Leonardo3",
+            "lastname": "Perez",
+            "email": "leoperez3@leoperez.com",
+            "password": "cualquiera3",
+            "genre": "M"
+        }
+    ]
+}
